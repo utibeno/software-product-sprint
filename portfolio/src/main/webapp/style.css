@@ -12,6 +12,7 @@ button {
   margin: 30px;
   border: none;
   font-family: 'Neucha';
+  vertical-align: center;
 }
 
 h3 {
