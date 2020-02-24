@@ -2,7 +2,6 @@
   margin-top: 20px;
   font-family: 'Neucha';
   color: #FEDA15;
-
 }
 
 button {
@@ -13,7 +12,6 @@ button {
   margin: 30px;
   border: none;
   font-family: 'Neucha';
-
 }
 
 h3 {
@@ -63,7 +61,6 @@ h2 {
   height: 300px;
   transform: rotate(90deg);
   border-radius: 50%;
-
 }
 
 section {
@@ -80,7 +77,6 @@ section {
   font-size: 20px;
   align-content: center;
   width: 50%;
-
 }
 
 .paragraph p {
@@ -130,7 +126,6 @@ footer {
   width: 100vw;
   background-color: #868B8E;
   text-align: center;
-
 }
 
 footer a {
