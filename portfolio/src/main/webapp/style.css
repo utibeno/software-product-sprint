@@ -1,9 +1,138 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
-}
-
 #greeting-container {
   margin-top: 20px;
+  font-family: 'Neucha';
+  color: #FEDA15;
+
+}
+
+button {
+  border-radius: 10px;
+  background-color: #FEDA15;
+  width: 100px;
+  font-size: 20px;
+  margin: 30px;
+  border: none;
+  font-family: 'Neucha';
+
+}
+
+h3 {
+  font-family: 'Neucha';
+  text-align: center;
+  font-size: 30px;
+  color: #F3F5F9;
+}
+
+h2 {
+  font-family: 'Neucha';
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Historia";
+  src: url("TheHistoriaDemo.eot?") format("eot"), url("TheHistoriaDemo.woff") format("woff"), url("TheHistoriaDemo.ttf") format("truetype"), url("TheHistoriaDemo.svg#TheHistoriaDemo") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.hero {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #383838;
+  background-size: cover;
+}
+
+.hero h1 {
+  font-family: 'Neucha';
+  color: #B5A197;
+  font-size: 50px;
+  padding-top: 20px;
+}
+
+.hero img {
+  width: 300px;
+  height: 300px;
+  transform: rotate(90deg);
+  border-radius: 50%;
+
+}
+
+section {
+  display: flex;
+  align-items: center;
+  background-color: #D2DDDB;
+  height: 100vh;
+}
+
+.paragraph {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  font-size: 20px;
+  align-content: center;
+  width: 50%;
+
+}
+
+.paragraph p {
+  font-family: 'Neucha';
+  color: #53565A;
+  padding: 50px;
+  word-spacing: 4px;
+}
+
+.gallery {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  padding: 20px;
+}
+
+.gallery img {
+  width: 100%;
+}
+
+.gallery1 {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  padding: 20px;
+}
+
+.background {
+  height: 100vh;
+  width: 100vw;
+}
+
+.talent {
+  justify-content: center;
+  text-align: center;
+  background-color: #EEEDE7;
+  padding: 40px;
+}
+
+.talent img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  background-color: #868B8E;
+  text-align: center;
+
+}
+
+footer a {
+  padding: 20px;
 }
