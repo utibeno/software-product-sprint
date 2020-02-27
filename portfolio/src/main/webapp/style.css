@@ -89,6 +89,17 @@ section {
   word-spacing: 4px;
 }
 
+#travel{
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+#places-container{
+  color: rgb(88, 88, 85);
+  font-family: 'Neucha';
+  text-align: center;
+}
 .gallery {
   flex: 1;
   display: grid;

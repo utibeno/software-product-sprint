@@ -27,7 +27,12 @@ function addRandomGreeting() {
     greetingContainer.innerText = greeting;
 }
 async function getName() {
-    const response = await fetch('/data');
+    const response = await fetch('/welcome');
     const quote = await response.text();
     document.getElementById("quote").innerText = quote;
+}
+async function getPlaces() {
+    const response = await fetch('/data');
+    const places = await response.json();
+    document.getElementById("places-container").innerText = places;
 }
