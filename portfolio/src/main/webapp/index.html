@@ -10,8 +10,9 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body onload="getGuesses()">
     <section class="hero">
+        
       <img src="images/portfolio_pic.jpg" alt="Uty" />
       <h1>Utibeno Ekpoudom</h1>
       <button onclick="addRandomGreeting(); getName()">Hello</button>
@@ -76,8 +77,18 @@
       </div>
     </section>
     <div class="talent">
-      <h2>Hidden Talent</h2>
+      <h1>Hidden Talent</h1>
       <img src="images/arsenal.jpg" alt="hidden talent: soccer" />
+      <form action="/data" method="POST">
+          <h3>Can you guess my hidden talent, is it <span>a soccer player</span> or <span> a motivator </span></h3>
+          <input type="text" name="text-input" id="talent-guess">
+          <br>
+          <button type="submit">Submit</button>
+
+      </form>
+      <div class="commentHistory">
+        <ul id="history"></ul>
+      </div>
     </div>
     <footer>
       <a href="https://github.com/utibeno"

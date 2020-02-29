@@ -32,7 +32,24 @@ async function getName() {
     document.getElementById("quote").innerText = quote;
 }
 async function getPlaces() {
-    const response = await fetch('/data');
-    const places = await response.json();
+    const response = await fetch('/places');
+		 places = await response.json();
     document.getElementById("places-container").innerText = places;
+}
+
+async function getGuesses() {
+    const response = await fetch('/data');
+    const guess = await response.json();
+
+    const guessHistory = document.getElementById('history');
+    guess.forEach((line) => {
+      guessHistory.appendChild(createListElement(line));
+    });
+
+  function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  console.log(text);
+  return liElement;
+}
 }
