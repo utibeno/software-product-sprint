@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
  * comments data
  */
 @WebServlet("/welcome")
-public class DataServlet_Welcome extends HttpServlet {
+public class DataServletWelcome extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {

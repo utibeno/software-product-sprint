@@ -27,7 +27,7 @@ import javax.servlet.http.HttpServletResponse;
  * comments data
  */
 @WebServlet("/places")
-public class DataServlet_Places extends HttpServlet {
+public class DataServletPlaces extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
