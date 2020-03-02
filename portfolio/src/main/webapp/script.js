@@ -33,7 +33,7 @@ async function getName() {
 }
 async function getPlaces() {
     const response = await fetch('/places');
-		 places = await response.json();
+    places = await response.json();
     document.getElementById("places-container").innerText = places;
 }
 
@@ -43,13 +43,13 @@ async function getGuesses() {
 
     const guessHistory = document.getElementById('history');
     guess.forEach((line) => {
-      guessHistory.appendChild(createListElement(line));
+        guessHistory.appendChild(createListElement(line));
     });
 
-  function createListElement(text) {
-  const liElement = document.createElement('li');
-  liElement.innerText = text;
-  console.log(text);
-  return liElement;
-}
+    function createListElement(text) {
+        const liElement = document.createElement('li');
+        liElement.innerText = text;
+        console.log(text);
+        return liElement;
+    }
 }
