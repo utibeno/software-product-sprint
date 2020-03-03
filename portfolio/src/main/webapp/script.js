@@ -43,7 +43,8 @@ async function getGuesses() {
 
     const guessHistory = document.getElementById('history');
     guess.forEach((line) => {
-        guessHistory.appendChild(createListElement(line));
+        guessHistory.appendChild(createListElement(line.title));
+        console.log(line.title);
     });
 
     function createListElement(text) {

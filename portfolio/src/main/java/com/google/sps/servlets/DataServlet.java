@@ -17,7 +17,10 @@ package com.google.sps.servlets;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
-import com.google.sps.data.Task;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.Query.SortDirection;
+import java.util.List;
 import java.util.ArrayList;
 import com.google.gson.Gson;
 import java.io.IOException;
@@ -33,33 +36,27 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
-    ArrayList<String> posts = new ArrayList<>();
-
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String json = convertToJson();
-        Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
 
+        Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         PreparedQuery results = datastore.prepare(query);
 
-        List<Task> comments = new ArrayList<>();
+        List<Comments> comments = new ArrayList<>();
         for (Entity entity : results.asIterable()) {
             long id = entity.getKey().getId();
             String title = (String) entity.getProperty("comment");
             long timestamp = (long) entity.getProperty("timestamp");
 
-            Task task = new Task(id, title, timestamp);
-            comments.add(task);
+            Comments comment = new Comments(id, title, timestamp);
+            comments.add(comment);
+            System.out.println("Comment is " + comment);
         }
+        String json = new Gson().toJson(comments);
         response.setContentType("application/json;");
         response.getWriter().println(json);
-    }
 
-    private String convertToJson() {
-        Gson gson = new Gson();
-        String json = gson.toJson(posts);
-        return json;
     }
 
     @Override
@@ -68,14 +65,14 @@ public class DataServlet extends HttpServlet {
         String regex = "\\s+$";
         long timestamp = System.currentTimeMillis();
         comment = comment.replaceAll(regex, "");
-        posts.add(text);
 
         Entity commentEntity = new Entity("Comment");
-        commentEntity.setProperty("comment", text);
+        commentEntity.setProperty("comment", comment);
         commentEntity.setProperty("timestamp", timestamp);
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         datastore.put(commentEntity);
+        System.out.println(commentEntity);
 
         response.sendRedirect("/index.html");
     }
