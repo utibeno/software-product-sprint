@@ -43,15 +43,14 @@ public class DataServlet extends HttpServlet {
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         PreparedQuery results = datastore.prepare(query);
 
-        List<Comments> comments = new ArrayList<>();
+        List<Comment> comments = new ArrayList<>();
         for (Entity entity : results.asIterable()) {
             long id = entity.getKey().getId();
             String title = (String) entity.getProperty("comment");
             long timestamp = (long) entity.getProperty("timestamp");
 
-            Comments comment = new Comments(id, title, timestamp);
+            Comment comment = new Comment(id, title, timestamp);
             comments.add(comment);
-            System.out.println("Comment is " + comment);
         }
         String json = new Gson().toJson(comments);
         response.setContentType("application/json;");
@@ -72,7 +71,6 @@ public class DataServlet extends HttpServlet {
 
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
         datastore.put(commentEntity);
-        System.out.println(commentEntity);
 
         response.sendRedirect("/index.html");
     }
