@@ -41,7 +41,11 @@ public class DataServlet extends HttpServlet {
 
         Query query = new Query("Comment").addSort("timestamp", SortDirection.DESCENDING);
         DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+        
         PreparedQuery results = datastore.prepare(query);
+
+        // System.out.println("image url is " + uploadUrl);
+
 
         List<Comment> comments = new ArrayList<>();
         for (Entity entity : results.asIterable()) {

@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
   </head>
-  <body onload="getGuesses()">
+  <body onload="loadFunctions()">
     <section class="hero">
         
       <img src="images/portfolio_pic.jpg" alt="Uty" />
@@ -54,7 +54,7 @@
         </p>
       </div>
       <div class="gallery">
-        <img src="images/project1.png" alt="" />
+        <!-- <img src="images/project1.png" alt="" /> -->
         <img src="images/react.png" alt="" />
         <img src="images/nlp.png" alt="" />
       </div>
@@ -86,8 +86,20 @@
           <button type="submit">Submit</button>
 
       </form>
+      <h1>OR</h1>
+      <form id="image-form" method="POST" enctype="multipart/form-data">
+        <br/>
+        <h3>Upload an image:</h3>
+        <input type="file" name="image">
+        <br/><br/>
+        <button onclick="getBlobstoreUrl()" >Submit</button>
+      </form>
+
       <div class="commentHistory">
         <ul id="history"></ul>
+      </div>
+      <div class="commentHistory">
+        <ul id="uploads"></ul>
       </div>
     </div>
     <footer>
