@@ -57,6 +57,7 @@ public class GetUrlServlet extends HttpServlet {
         // PreparedQuery results = datastore.prepare(query);
         String uploadUrl = blobstoreService.createUploadUrl("/image");
 
+
         // System.out.println("image url is " + uploadUrl);
 
         // List<Image> images = new ArrayList<>();

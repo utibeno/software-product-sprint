@@ -75,6 +75,8 @@ public class ImageDataServlet extends HttpServlet {
         return null;
         }
 
+        
+
         // Our form only contains a single file input, so get the first index.
         BlobKey blobKey = blobKeys.get(0);
 
