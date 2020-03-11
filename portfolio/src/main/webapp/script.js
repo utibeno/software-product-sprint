@@ -27,7 +27,61 @@ function addRandomGreeting() {
     greetingContainer.innerText = greeting;
 }
 async function getName() {
-    const response = await fetch('/data');
+    const response = await fetch('/welcome');
     const quote = await response.text();
     document.getElementById("quote").innerText = quote;
+}
+async function getPlaces() {
+    const response = await fetch('/places');
+    places = await response.json();
+    document.getElementById("places-container").innerText = places;
+}
+
+async function getGuesses() {
+    const response = await fetch('/data');
+    const guess = await response.json();
+
+    const guessHistory = document.getElementById('history');
+    guess.forEach((line) => {
+        guessHistory.appendChild(createListElement(line.title));
+        console.log(line.title);
+    });
+
+    function createListElement(text) {
+        const liElement = document.createElement('li');
+        liElement.innerText = text;
+        console.log(text);
+        return liElement;
+    }
+}
+
+async function getBlobstoreUrl() {
+    const response = await fetch('/getUrl');
+    const imageUrl = await response.json();
+
+    const imageForm = document.getElementById('image-form');
+    imageForm.action = imageUrl;
+    console.log(imageUrl);
+
+    const guessHistory = document.getElementById('uploads');
+    guess.forEach((line) => {
+        guessHistory.appendChild(createListElement(line.uploadUrl));
+        console.log(line.uploadUrl);
+    });
+
+    function createListElement(url) {
+        const liElement = document.createElement('li');
+        liElement.innerText = url;
+        console.log(url);
+        return liElement;
+    }
+
+    const image = document.getElementById("image-upload");
+    image.src = imageUrl;
+
+}
+
+function loadFunctions() {
+    // getBlobstoreUrl();
+    getGuesses();
 }

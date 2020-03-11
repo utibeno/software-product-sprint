@@ -10,8 +10,9 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body onload="loadFunctions()">
     <section class="hero">
+        
       <img src="images/portfolio_pic.jpg" alt="Uty" />
       <h1>Utibeno Ekpoudom</h1>
       <button onclick="addRandomGreeting(); getName()">Hello</button>
@@ -53,17 +54,18 @@
         </p>
       </div>
       <div class="gallery">
-        <img src="images/project1.png" alt="" />
+        <!-- <img src="images/project1.png" alt="" /> -->
         <img src="images/react.png" alt="" />
         <img src="images/nlp.png" alt="" />
       </div>
     </section>
     <section class="places">
-      <div class="paragraph">
+      <div class="paragraph" id="travel">
         <p>
-          I do love travelling and trying new things with friends and strangers
-          (potential friends)!
+          I do love travelling and trying new things with friends and strangers (potential friends)!
         </p>
+        <button onclick="getPlaces()">Explore Places</button>
+        <div id="places-container"></div>
       </div>
       <div class="gallery">
         <img src="images/image1.jpg" alt="great-wall with uty" />
@@ -75,8 +77,30 @@
       </div>
     </section>
     <div class="talent">
-      <h2>Hidden Talent</h2>
+      <h1>Hidden Talent</h1>
       <img src="images/arsenal.jpg" alt="hidden talent: soccer" />
+      <form action="/data" method="POST">
+          <h3>Can you guess my hidden talent, is it <span>a soccer player</span> or <span> a motivator </span></h3>
+          <input type="text" name="text-input" id="talent-guess">
+          <br>
+          <button type="submit">Submit</button>
+
+      </form>
+      <h1>OR</h1>
+      <form id="image-form" method="POST" enctype="multipart/form-data">
+        <br/>
+        <h3>Upload an image:</h3>
+        <input type="file" name="image">
+        <br/><br/>
+        <button onclick="getBlobstoreUrl()" >Submit</button>
+      </form>
+
+      <div class="commentHistory">
+        <ul id="history"></ul>
+      </div>
+      <div class="commentHistory">
+        <ul id="uploads"></ul>
+      </div>
     </div>
     <footer>
       <a href="https://github.com/utibeno"

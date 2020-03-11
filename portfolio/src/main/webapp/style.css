@@ -5,12 +5,12 @@
   font-size: 25px;
 }
 
-button {
+button, #talent-guess {
   border-radius: 10px;
   background-color: #FEDA15;
   width: 100px;
   font-size: 20px;
-  margin: 30px;
+  margin: 10px;
   border: none;
   font-family: 'Neucha';
   vertical-align: center;
@@ -20,7 +20,7 @@ h3 {
   font-family: 'Neucha';
   text-align: center;
   font-size: 30px;
-  color: #F3F5F9;
+  color: rgb(90, 91, 92);
 }
 
 h2 {
@@ -52,7 +52,7 @@ h2 {
   background-size: cover;
 }
 
-.hero h1 {
+h1 {
   font-family: 'Neucha';
   color: #B5A197;
   font-size: 50px;
@@ -89,6 +89,17 @@ section {
   word-spacing: 4px;
 }
 
+#travel{
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+#places-container{
+  color: rgb(88, 88, 85);
+  font-family: 'Neucha';
+  text-align: center;
+}
 .gallery {
   flex: 1;
   display: grid;
@@ -112,15 +123,36 @@ section {
 }
 
 .talent {
-  justify-content: center;
-  text-align: center;
-  background-color: #EEEDE7;
-  padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    background-color: #EEEDE7;
+    padding: 40px;
+    align-items: center;
 }
 
 .talent img {
   width: 300px;
   border-radius: 10px;
+}
+
+#talent-guess{
+    background-color: #FEDA15;
+}
+
+li{
+    list-style: none;
+    font-family: monospace;
+}
+
+.commentHistory{
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    width: 400px;
+    border-radius: 10px;
+
 }
 
 footer {
