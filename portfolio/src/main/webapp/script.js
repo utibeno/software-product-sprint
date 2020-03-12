@@ -12,6 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
 /**
  * Adds a random greeting to the page.
  */
@@ -55,33 +58,19 @@ async function getGuesses() {
     }
 }
 
-async function getBlobstoreUrl() {
-    const response = await fetch('/getUrl');
-    const imageUrl = await response.json();
-
-    const imageForm = document.getElementById('image-form');
-    imageForm.action = imageUrl;
-    console.log(imageUrl);
-
-    const guessHistory = document.getElementById('uploads');
-    guess.forEach((line) => {
-        guessHistory.appendChild(createListElement(line.uploadUrl));
-        console.log(line.uploadUrl);
-    });
-
-    function createListElement(url) {
-        const liElement = document.createElement('li');
-        liElement.innerText = url;
-        console.log(url);
-        return liElement;
-    }
-
-    const image = document.getElementById("image-upload");
-    image.src = imageUrl;
-
+function fetchBlobstoreUrlAndShowForm() {
+  fetch('/blobstore-upload-url')
+      .then((response) => {
+        return response.text();
+      })
+      .then((imageUploadUrl) => {
+        const messageForm = document.getElementById('my-form');
+        messageForm.action = imageUploadUrl;
+        messageForm.classList.remove('hidden');
+      });
 }
 
 function loadFunctions() {
-    // getBlobstoreUrl();
     getGuesses();
+    fetchBlobstoreUrlAndShowForm();
 }

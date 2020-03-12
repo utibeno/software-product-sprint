@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,6 +10,37 @@
       href="https://fonts.googleapis.com/css?family=Merienda|Neucha&display=swap"
       rel="stylesheet"
     />
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Visited'],
+          ['China', 1],
+          ['United States', 1],
+          ['South Korea', 1],
+          ['Canada', 1],
+          ['Thailand', 1],
+        ]);
+
+        var options = {
+          colorAxis: {colors: ['#FF5733']},
+          datalessRegionColor: '#FFC300',
+          defaultColor: '#FFC300',
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
   </head>
   <body onload="loadFunctions()">
     <section class="hero">
@@ -77,24 +109,19 @@
       </div>
     </section>
     <div class="talent">
-      <h1>Hidden Talent</h1>
-      <img src="images/arsenal.jpg" alt="hidden talent: soccer" />
+        <div class="places">
+        <h3>Places I've Visited</h3>
+        <div id="regions_div" style="width: 900px; height: 500px;"></div>
+    </div>
+      <!-- <h1>Hidden Talent</h1>
+      <img src="images/arsenal.jpg" alt="hidden talent: soccer" /> -->
       <form action="/data" method="POST">
-          <h3>Can you guess my hidden talent, is it <span>a soccer player</span> or <span> a motivator </span></h3>
+          <h5>What countries have you visited?</h5>
           <input type="text" name="text-input" id="talent-guess">
           <br>
-          <button type="submit">Submit</button>
-
+          <button id="comment-button" type="submit">Submit</button>
       </form>
-      <h1>OR</h1>
-      <form id="image-form" method="POST" enctype="multipart/form-data">
-        <br/>
-        <h3>Upload an image:</h3>
-        <input type="file" name="image">
-        <br/><br/>
-        <button onclick="getBlobstoreUrl()" >Submit</button>
-      </form>
-
+    
       <div class="commentHistory">
         <ul id="history"></ul>
       </div>
@@ -102,6 +129,7 @@
         <ul id="uploads"></ul>
       </div>
     </div>
+    
     <footer>
       <a href="https://github.com/utibeno"
         ><img src="https://img.icons8.com/bubbles/50/000000/github.png"
@@ -111,4 +139,6 @@
       /></a>
     </footer>
   </body>
+   <script src="https://www.gstatic.com/charts/loader.js"></script>
+   <script src="script.js"></script>
 </html>

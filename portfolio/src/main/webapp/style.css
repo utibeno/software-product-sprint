@@ -27,6 +27,12 @@ h2 {
   font-family: 'Neucha';
   color: #FEDA15;
 }
+h5{
+  font-family: 'Neucha';
+  font-size: 15px;
+  color: rgb(90, 91, 92);
+  margin-top: 10px;
+}
 
 * {
   margin: 0px;
@@ -122,6 +128,14 @@ section {
   width: 100vw;
 }
 
+#visited div{
+    border-radius: 10px;
+}
+
+#comment-button{
+  width: 90px;
+  font-size: 10px;
+}
 .talent {
     display: flex;
     flex-direction: column;
@@ -152,7 +166,7 @@ li{
     background-color: whitesmoke;
     width: 400px;
     border-radius: 10px;
-
+    height: 100px
 }
 
 footer {
