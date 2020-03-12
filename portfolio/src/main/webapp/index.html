@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,40 +10,43 @@
       rel="stylesheet"
     />
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
     <script type="text/javascript">
-      google.charts.load('current', {
-        'packages':['geochart'],
-        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      google.charts.load("current", {
+        packages: ["geochart"],
+        mapsApiKey: "AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY"
       });
       google.charts.setOnLoadCallback(drawRegionsMap);
 
       function drawRegionsMap() {
         var data = google.visualization.arrayToDataTable([
-          ['Country', 'Visited'],
-          ['China', 1],
-          ['United States', 1],
-          ['South Korea', 1],
-          ['Canada', 1],
-          ['Thailand', 1],
+          ["Country", "Visited"],
+          ["China", 1],
+          ["United States", 1],
+          ["South Korea", 1],
+          ["Canada", 1],
+          ["Thailand", 1]
         ]);
 
         var options = {
-          colorAxis: {colors: ['#FF5733']},
-          datalessRegionColor: '#FFC300',
-          defaultColor: '#FFC300',
+          colorAxis: { colors: ["#FF5733"] },
+          datalessRegionColor: "#FFC300",
+          defaultColor: "#FFC300"
         };
 
-        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+        var chart = new google.visualization.GeoChart(
+          document.getElementById("regions_div")
+        );
 
         chart.draw(data, options);
       }
     </script>
-
   </head>
   <body onload="loadFunctions()">
     <section class="hero">
-        
       <img src="images/portfolio_pic.jpg" alt="Uty" />
       <h1>Utibeno Ekpoudom</h1>
       <button onclick="addRandomGreeting(); getName()">Hello</button>
@@ -94,7 +96,8 @@
     <section class="places">
       <div class="paragraph" id="travel">
         <p>
-          I do love travelling and trying new things with friends and strangers (potential friends)!
+          I do love travelling and trying new things with friends and strangers
+          (potential friends)!
         </p>
         <button onclick="getPlaces()">Explore Places</button>
         <div id="places-container"></div>
@@ -109,19 +112,19 @@
       </div>
     </section>
     <div class="talent">
-        <div class="places">
+      <div class="places">
         <h3>Places I've Visited</h3>
         <div id="regions_div" style="width: 900px; height: 500px;"></div>
-    </div>
+      </div>
       <!-- <h1>Hidden Talent</h1>
       <img src="images/arsenal.jpg" alt="hidden talent: soccer" /> -->
       <form action="/data" method="POST">
-          <h5>What countries have you visited?</h5>
-          <input type="text" name="text-input" id="talent-guess">
-          <br>
-          <button id="comment-button" type="submit">Submit</button>
+        <h5>What countries have you visited?</h5>
+        <input type="text" name="text-input" id="talent-guess" />
+        <br />
+        <button id="comment-button" type="submit">Submit</button>
       </form>
-    
+
       <div class="commentHistory">
         <ul id="history"></ul>
       </div>
@@ -129,7 +132,7 @@
         <ul id="uploads"></ul>
       </div>
     </div>
-    
+
     <footer>
       <a href="https://github.com/utibeno"
         ><img src="https://img.icons8.com/bubbles/50/000000/github.png"
@@ -139,6 +142,6 @@
       /></a>
     </footer>
   </body>
-   <script src="https://www.gstatic.com/charts/loader.js"></script>
-   <script src="script.js"></script>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="script.js"></script>
 </html>

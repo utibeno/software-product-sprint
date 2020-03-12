@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-google.charts.load('current', {'packages':['corechart']});
+google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawChart);
 
 /**
@@ -58,19 +58,6 @@ async function getGuesses() {
     }
 }
 
-function fetchBlobstoreUrlAndShowForm() {
-  fetch('/blobstore-upload-url')
-      .then((response) => {
-        return response.text();
-      })
-      .then((imageUploadUrl) => {
-        const messageForm = document.getElementById('my-form');
-        messageForm.action = imageUploadUrl;
-        messageForm.classList.remove('hidden');
-      });
-}
-
 function loadFunctions() {
     getGuesses();
-    fetchBlobstoreUrlAndShowForm();
 }
