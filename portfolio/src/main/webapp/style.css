@@ -1,11 +1,13 @@
-#greeting-container, #quote {
+#greeting-container,
+#quote {
   margin-top: 20px;
   font-family: 'Neucha';
   color: #FEDA15;
   font-size: 25px;
 }
 
-button, #talent-guess {
+button,
+#talent-guess {
   border-radius: 10px;
   background-color: #FEDA15;
   width: 100px;
@@ -26,6 +28,13 @@ h3 {
 h2 {
   font-family: 'Neucha';
   color: #FEDA15;
+}
+
+h5 {
+  font-family: 'Neucha';
+  font-size: 15px;
+  color: rgb(90, 91, 92);
+  margin-top: 10px;
 }
 
 * {
@@ -89,17 +98,18 @@ section {
   word-spacing: 4px;
 }
 
-#travel{
+#travel {
   flex-direction: column;
   align-content: center;
   align-items: center;
 }
 
-#places-container{
+#places-container {
   color: rgb(88, 88, 85);
   font-family: 'Neucha';
   text-align: center;
 }
+
 .gallery {
   flex: 1;
   display: grid;
@@ -122,14 +132,23 @@ section {
   width: 100vw;
 }
 
+#visited div {
+  border-radius: 10px;
+}
+
+#comment-button {
+  width: 90px;
+  font-size: 10px;
+}
+
 .talent {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
-    background-color: #EEEDE7;
-    padding: 40px;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  background-color: #EEEDE7;
+  padding: 40px;
+  align-items: center;
 }
 
 .talent img {
@@ -137,22 +156,22 @@ section {
   border-radius: 10px;
 }
 
-#talent-guess{
-    background-color: #FEDA15;
+#talent-guess {
+  background-color: #FEDA15;
 }
 
-li{
-    list-style: none;
-    font-family: monospace;
+li {
+  list-style: none;
+  font-family: monospace;
 }
 
-.commentHistory{
-    display: flex;
-    justify-content: center;
-    background-color: whitesmoke;
-    width: 400px;
-    border-radius: 10px;
-
+.commentHistory {
+  display: flex;
+  justify-content: center;
+  background-color: whitesmoke;
+  width: 400px;
+  border-radius: 10px;
+  height: 100px
 }
 
 footer {

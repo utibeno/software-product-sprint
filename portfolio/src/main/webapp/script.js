@@ -55,33 +55,6 @@ async function getGuesses() {
     }
 }
 
-async function getBlobstoreUrl() {
-    const response = await fetch('/getUrl');
-    const imageUrl = await response.json();
-
-    const imageForm = document.getElementById('image-form');
-    imageForm.action = imageUrl;
-    console.log(imageUrl);
-
-    const guessHistory = document.getElementById('uploads');
-    guess.forEach((line) => {
-        guessHistory.appendChild(createListElement(line.uploadUrl));
-        console.log(line.uploadUrl);
-    });
-
-    function createListElement(url) {
-        const liElement = document.createElement('li');
-        liElement.innerText = url;
-        console.log(url);
-        return liElement;
-    }
-
-    const image = document.getElementById("image-upload");
-    image.src = imageUrl;
-
-}
-
 function loadFunctions() {
-    // getBlobstoreUrl();
     getGuesses();
 }

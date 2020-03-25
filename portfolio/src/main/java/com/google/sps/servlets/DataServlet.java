@@ -44,9 +44,6 @@ public class DataServlet extends HttpServlet {
         
         PreparedQuery results = datastore.prepare(query);
 
-        // System.out.println("image url is " + uploadUrl);
-
-
         List<Comment> comments = new ArrayList<>();
         for (Entity entity : results.asIterable()) {
             long id = entity.getKey().getId();
